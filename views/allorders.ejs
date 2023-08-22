@@ -1,0 +1,59 @@
+
+<!-- All orders page where user can see all orders -->
+
+<%- include("layouts/header.ejs") %>
+
+<main>
+        <h1 class="ordersh1">All Orders</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                   
+                    <th>Phone</th>
+                    
+                    <th>Mango Juices</th>
+                    <th>Berry Juices</th>
+                    <th>Apple Juices</th>
+                    
+                    <th>Net Amount</th>
+                    <th>Tax Cost</th>
+                    <th>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var order of orders){ %>
+                    <tr>
+                        <td>
+                            <%= order.name %>
+                        </td>
+                       
+                        <td>
+                            <%= order.phone %>
+                        </td>
+                        
+                        <td>
+                            <%= order.mango %>
+                        </td>
+                        <td>
+                            <%= order.berry %>
+                        </td>
+                        <td>
+                            <%= order.Apple %>
+                        </td>
+                        
+                        <td>
+                            <%= order.grossAmt.toFixed(2) %>
+                        </td>
+                        <td>
+                            <%= order.taxAmount.toFixed(2) %>
+                        </td>
+                        <td>
+                            <%= order.totalCost.toFixed(2) %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+</main>
+<%- include("layouts/footer.ejs")%>

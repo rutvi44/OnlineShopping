@@ -1,0 +1,73 @@
+ <!-- To print the customers reciept -->
+
+<%- include("layouts/header.ejs") %>
+<div class="reciepthead">
+<h2>Thank You For Purchasing!!</h2>
+<h3>Customer Reciept!!</h3>
+</div>
+<main>
+
+        <table>
+            <tr>
+                <th>Name :</th>
+                <td>
+                    <%= order.name %>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>Phone :</th>
+                <td>
+                    <%= order.phone %>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>
+                    Mango Juices
+                </th>
+                <td>
+                    <%= order.mango * 2.99 %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Berry Juices
+                </th>
+                <td>
+                    <%= order.berry * 1.99 %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Apple Juices
+                </th>
+                <td>
+                    <%= order.Apple * 2.49 %>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>Sub Total :</th>
+                <td>
+                    <%= order.grossAmt.toFixed(2) %>
+                </td>
+            </tr>
+            <tr>
+                <th>Tax :</th>
+                <td>
+                    <%= order.taxAmount.toFixed(2) %>
+                </td>
+            </tr>
+            <tr>
+                <th>Total :</th>
+                <td>
+                    <%= order.totalCost.toFixed(2) %>
+                </td>
+            </tr>
+
+        </table>
+
+</main>
+
+<%- include("layouts/footer.ejs")%>

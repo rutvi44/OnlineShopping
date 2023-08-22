@@ -1,0 +1,31 @@
+
+ <!-- Main page of the web page -->
+
+<%- include("layouts/header.ejs") %>
+<main>
+    <h2 class="order">Place Order</h2>
+    <form id="orderForm" action="reciept" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" placeholder="123-123-1234">
+        <h3>Choose Juices:</h3>
+
+        <label for="Mango">Mango Juice ($2.99 each):</label>
+        <input type="text" id="Mango" name="mango">
+
+        <label for="Berry">Berry Juice ($1.99 each):</label>
+        <input type="text" id="berry" name="berry">
+
+        <label for="Apple">Apple Juice ($2.49 each):</label>
+        <input type="text" id="Apple" name="Apple">
+
+        <button type="submit">Place Order</button>
+        <div id="error">
+            <% if(typeof(errors) !='undefined' ){ for(error of errors){ %>
+              <%= error.msg %><br>
+                <% } } %>
+          </div>
+    </form>
+</main>
+<%- include("layouts/footer.ejs") %>
